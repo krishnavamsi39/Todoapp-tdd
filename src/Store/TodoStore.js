@@ -12,7 +12,9 @@ class TodoStore{
         this.id+=1
 
     }
-    
+    deleteTodo(id){
+        this.todos=[]
+    }
 
 }
 export default TodoStore
