@@ -13,7 +13,7 @@ class TodoStore{
 
     }
     deleteTodo(id){
-        this.todos=[]
+        this.todos= this.todos.filter(obj => obj.id !== id)
     }
 
 }

@@ -19,6 +19,12 @@ describe('TodoStore functionality ',() =>{
       todoStore.addTodo("tdd")
       todoStore.deleteTodo(1)
       expect(todoStore.todos.length).toBe(0)
+      todoStore.addTodo("hello")
+      todoStore.addTodo("world")
+      todoStore.deleteTodo(2)
+      expect(todoStore.todos.length).toBe(1)
+
+
   })
   
 })
