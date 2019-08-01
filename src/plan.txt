@@ -1,0 +1,20 @@
+Components
+    []TodoApp
+        []EnterTodo
+        []TodoList
+            []EachTodo
+                []EditableTodo
+            []TodoFooter
+
+
+Stores
+     
+    TodoStore
+        []addTodo
+        []clearCompleted
+        []filterTodo
+        []deleteTodo
+        []itemsLeft
+Models
+    []toggleTodo 
+    []updateTodo
