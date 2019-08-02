@@ -1,8 +1,8 @@
 Components
-    []TodoApp
-        []EnterTodo
+    [x]TodoApp
+        [x]EnterTodo
         []TodoList
-            []EachTodo
+            [x]EachTodo
                 []EditableTodo
             []TodoFooter
 

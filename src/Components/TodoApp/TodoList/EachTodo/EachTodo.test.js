@@ -22,6 +22,14 @@ describe('Test for EachTodo Component',()=>{
         fireEvent.click(deleteTodo)
         expect(todoStore.deleteTodo).toHaveBeenCalled()
         expect(todoStore.todos.length).toBe(0)
+    })
+    it('should become editable text on double click and text should change on clicking enter key',()=>{
+        const todo=new Todo("mobx",1,false)
+        jest.spyOn(todo,'updateTodoText')
+        const {getByTestId}=render(<EachTodo todo={todo}/>)
+        const editableText=getByTestId("double-click")
+        fireEvent.dblClick(editableText)
+        
 
 
     })
