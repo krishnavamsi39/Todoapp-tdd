@@ -14,8 +14,8 @@ Stores
         [x]deleteTodo
         [x]clearCompleted
         [x]changeFilter
-        []filterTodo
-        []itemsLeft
+        [x]filterTodo
+        [x]itemsLeft
 Models
     []toggleTodo 
     []updateTodo

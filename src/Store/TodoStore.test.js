@@ -75,9 +75,9 @@ describe('TodoStore functionality ',() =>{
    todoStore.todos[1].isCompleted=true 
    expect(todoStore.filterTodo.length).toBe(1)
 
-
-
-
-
+   })
+   it('should toggle a todo',()=>{
+     expect(todoStore.todos[0].isCompleted).toBe(false)
+     todoStore.toggleTodo()
    })
 })

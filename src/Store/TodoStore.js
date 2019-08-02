@@ -1,16 +1,15 @@
 import {observable,action,computed, get} from 'mobx'
 import todoFilterTypes from '../Constants/todoFilter'
+import Todo from '../Models/todo'
 class TodoStore{
+
     @observable todos=[]
     @observable currentFilter=todoFilterTypes.all
     id=1
+   
    @action addTodo(todoText){
-        const obj={
-            text:todoText,
-            id:this.id,
-            isCompleted:false
-        }
-        this.todos.push(obj)
+       
+        this.todos.push(new Todo(todoText,this.id,false))
         this.id+=1
 
     }
