@@ -10,10 +10,10 @@ Components
 Stores
      
     TodoStore
-        []addTodo
+        [x]addTodo
+        [x]deleteTodo
         []clearCompleted
         []filterTodo
-        []deleteTodo
         []itemsLeft
 Models
     []toggleTodo 

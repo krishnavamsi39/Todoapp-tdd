@@ -23,8 +23,18 @@ describe('TodoStore functionality ',() =>{
       todoStore.addTodo("world")
       todoStore.deleteTodo(2)
       expect(todoStore.todos.length).toBe(1)
-
-
   })
-  
+  it('clear completed',()=>{
+    const todoStore=new TodoStore()
+    expect(todoStore.todos.length).toBe(0)
+    todoStore.addTodo("react")
+    todoStore.addTodo("mobx")
+    todoStore.todos[0].isCompleted=true
+    todoStore.addTodo("styledComponents")   
+    todoStore.clearCompleted()
+    expect(todoStore.todos.length).toBe(2)
+
+
+    
+  })
 })
