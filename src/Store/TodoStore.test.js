@@ -33,6 +33,15 @@ describe('TodoStore functionality ',() =>{
     todoStore.addTodo("styledComponents")   
     todoStore.clearCompleted()
     expect(todoStore.todos.length).toBe(2)
+    expect(todoStore.todos[0].text).toBe("mobx")
+    todoStore.todos[1].isCompleted=true
+    todoStore.clearCompleted()
+
+    expect(todoStore.todos[0].text).toBe("mobx")
+  
+
+
+
 
 
     
