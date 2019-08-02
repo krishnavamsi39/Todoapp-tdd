@@ -13,6 +13,7 @@ Stores
         [x]addTodo
         [x]deleteTodo
         [x]clearCompleted
+        []changeFilter
         []filterTodo
         []itemsLeft
 Models

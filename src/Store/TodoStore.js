@@ -1,6 +1,7 @@
 import {observable,action} from 'mobx'
 class TodoStore{
     @observable todos=[]
+    @observable currentFilter="all"
     id=1
    @action addTodo(todoText){
         const obj={

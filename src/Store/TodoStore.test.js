@@ -38,4 +38,8 @@ describe('TodoStore functionality ',() =>{
     expect(todoStore.todos[0].text).toBe("mobx")
 
   })
+  it('update Filter',()=>{
+   todoStore.changeFilter("all")
+
+  })
 })
