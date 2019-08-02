@@ -7,7 +7,7 @@ Components
             []TodoFooter
 
 
-Stores
+[x]Stores
      
     TodoStore
         [x]addTodo
@@ -16,6 +16,6 @@ Stores
         [x]changeFilter
         [x]filterTodo
         [x]itemsLeft
-Models
-    []toggleTodo 
-    []updateTodo
+[x]Models
+    [x]toggleTodo 
+    [x]updateTodoText
