@@ -1,11 +1,15 @@
 import React, { Component } from "react";
 import EnterTodo from './EnterTodo'
-class TodoApp extends Component{
+import todoStore from '../../Store/instances'
 
+class TodoApp extends Component{
+onKeyPressEnter=(todoText)=>{
+    todoStore.addTodo(todoText)
+}
 render(){
     return(
         <>
-        <EnterTodo />
+        <EnterTodo onKeyPressEnter={this.onKeyPressEnter}/>
         </>
     )
 }

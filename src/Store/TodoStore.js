@@ -8,8 +8,8 @@ class TodoStore{
     id=1
    
    @action addTodo(todoText){
-       
-        this.todos.push(new Todo(todoText,this.id,false))
+       const todo=new Todo(todoText,this.id,false)
+        this.todos.push(todo)
         this.id+=1
 
     }
