@@ -8,8 +8,10 @@ class Todo{
        
         this.isCompleted = completed;
       }
-   
-   
+    @action 
+    toggleTodo(){
+        this.isCompleted=!this.isCompleted
+    }
 
 }
 export default Todo
