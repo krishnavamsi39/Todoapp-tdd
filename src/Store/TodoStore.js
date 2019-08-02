@@ -15,6 +15,9 @@ class TodoStore{
     deleteTodo(id){
         this.todos= this.todos.filter(obj => obj.id !== id)
     }
+    clearCompleted(){
+        this.todos=this.todos.filter(obj=>!obj.isCompleted)
+    }
 
 }
 export default TodoStore
