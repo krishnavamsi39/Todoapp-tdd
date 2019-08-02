@@ -11,5 +11,6 @@ describe('Test for EachTodo Component',()=>{
         const {getByTestId}=render(<EachTodo />)
         const todoCompleted=getByTestId("checkbox")
         fireEvent.click(todoCompleted)
+        
     })
 })
