@@ -39,14 +39,19 @@ describe('TodoStore functionality ',() =>{
 
   })
   it('update Filter',()=>{
+   expect(todoStore.currentFilter).toBe("all")
    todoStore.changeFilter("all")
+   expect(todoStore.currentFilter).toBe("all")
+   
    todoStore.changeFilter("active")
    expect(todoStore.currentFilter).toBe("active")
 
    todoStore.changeFilter("completed")
    expect(todoStore.currentFilter).toBe("completed")
 
-
-
   })
+  it('items left',()=>{
+    expect(todoStore.itemsLeft).toBe(3)
+   
+   })
 })
