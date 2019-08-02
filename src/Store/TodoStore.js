@@ -1,6 +1,6 @@
 import {observable,action,computed, get} from 'mobx'
 import todoFilterTypes from '../Constants/todoFilter'
-import Todo from '../Models/todo'
+import Todo from '../Models/Todo'
 class TodoStore{
 
     @observable todos=[]
