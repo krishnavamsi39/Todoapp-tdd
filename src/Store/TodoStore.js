@@ -24,6 +24,7 @@ this.currentFilter=filter
 }
 @computed get
  itemsLeft(){
+     return this.todos.length
 
 }
 }
