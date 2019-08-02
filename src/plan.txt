@@ -12,7 +12,7 @@ Stores
     TodoStore
         [x]addTodo
         [x]deleteTodo
-        []clearCompleted
+        [x]clearCompleted
         []filterTodo
         []itemsLeft
 Models

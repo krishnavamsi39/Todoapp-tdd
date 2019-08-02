@@ -1,8 +1,8 @@
-import {observable} from 'mobx'
+import {observable,action} from 'mobx'
 class TodoStore{
     @observable todos=[]
     id=1
-    addTodo(todoText){
+   @action addTodo(todoText){
         const obj={
             text:todoText,
             id:this.id,
@@ -12,10 +12,10 @@ class TodoStore{
         this.id+=1
 
     }
-    deleteTodo(id){
+   @action deleteTodo(id){
         this.todos= this.todos.filter(obj => obj.id !== id)
     }
-    clearCompleted(){
+   @action clearCompleted(){
         this.todos=this.todos.filter(obj=>!obj.isCompleted)
     }
 
