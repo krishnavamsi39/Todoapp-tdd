@@ -19,6 +19,8 @@ class TodoStore{
    @action clearCompleted(){
         this.todos=this.todos.filter(obj=>!obj.isCompleted)
     }
-
+@action changeFilter(){
+    
+}
 }
 export default TodoStore
