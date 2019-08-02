@@ -8,9 +8,11 @@ describe('Test for EachTodo Component',()=>{
     it('should check the checkbox',()=>{
         const todo=new Todo("mobx",1,false)
         jest.spyOn(todo,'toggleTodo')
-        const {getByTestId}=render(<EachTodo />)
+        const {getByTestId}=render(<EachTodo todo={todo}/>)
         const todoCompleted=getByTestId("checkbox")
         fireEvent.click(todoCompleted)
+        expect(todo.toggleTodo).toHaveBeenCalled()
         
+
     })
 })
