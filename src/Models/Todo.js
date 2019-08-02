@@ -12,6 +12,10 @@ class Todo{
     toggleTodo(){
         this.isCompleted=!this.isCompleted
     }
+   /* @action
+    updateTodoText(){
+
+    }*/
 
 }
 export default Todo
