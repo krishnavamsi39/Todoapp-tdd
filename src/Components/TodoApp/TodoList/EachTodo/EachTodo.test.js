@@ -17,10 +17,11 @@ describe('Test for EachTodo Component',()=>{
         const todoStore=new TodoStore()
         jest.spyOn(todoStore,'deleteTodo')
         todoStore.addTodo("react")
-        const {getByTestId}=render(<EachTodo todoStore={todoStore}/>)
+        const {getByTestId}=render(<EachTodo todo={todoStore.todos[0]}todoStore={todoStore}/>)
         const deleteTodo=getByTestId("delete-todo")
         fireEvent.click(deleteTodo)
         expect(todoStore.deleteTodo).toHaveBeenCalled()
+        expect(todoStore.todos.length).toBe(0)
 
 
     })
