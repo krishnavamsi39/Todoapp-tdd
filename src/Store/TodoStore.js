@@ -34,7 +34,7 @@ return itemCount
 }
 @computed get
 filterTodo(){
-    
+    return this.todos
 }
 }
 export default TodoStore
