@@ -59,9 +59,8 @@ describe('TodoStore functionality ',() =>{
     todoStore.todos[1].isCompleted=false 
     expect(todoStore.itemsLeft).toBe(2)
 
-
-
-
-   
+   })
+   it('filter todo',()=>{
+     expect(todoStore.filterTodo.length).toBe(3)
    })
 })

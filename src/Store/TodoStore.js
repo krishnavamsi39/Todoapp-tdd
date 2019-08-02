@@ -1,4 +1,4 @@
-import {observable,action,computed} from 'mobx'
+import {observable,action,computed, get} from 'mobx'
 class TodoStore{
     @observable todos=[]
     @observable currentFilter="all"
@@ -31,6 +31,10 @@ this.currentFilter=filter
          }
      })
 return itemCount
+}
+@computed get
+filterTodo(){
+    
 }
 }
 export default TodoStore
