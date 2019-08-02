@@ -1,7 +1,8 @@
 import {observable,action,computed, get} from 'mobx'
+import todoFilterTypes from '../Constants/todoFilter'
 class TodoStore{
     @observable todos=[]
-    @observable currentFilter="all"
+    @observable currentFilter=todoFilterTypes.all
     id=1
    @action addTodo(todoText){
         const obj={
@@ -34,7 +35,13 @@ return itemCount
 }
 @computed get
 filterTodo(){
-    return this.todos
+    
+    if(this.currentFilter===todoFilterTypes.all)
+        return this.todos
+    else if(this.currentFilter===todoFilterTypes.active)
+        return this.todos.filter(obj=>!obj.isCompleted)
+   else
+     return this.todos.filter(obj=>obj.isCompleted)
 }
 }
 export default TodoStore

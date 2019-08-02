@@ -2,7 +2,7 @@
 
 import TodoStore from  './TodoStore'
 
-
+import todoFilterTypes from '../Constants/todoFilter'
 describe('TodoStore functionality ',() =>{
   let todoStore
   beforeEach(()=>{
@@ -39,15 +39,15 @@ describe('TodoStore functionality ',() =>{
 
   })
   it('update Filter',()=>{
-   expect(todoStore.currentFilter).toBe("all")
-   todoStore.changeFilter("all")
-   expect(todoStore.currentFilter).toBe("all")
+   expect(todoStore.currentFilter).toBe(todoFilterTypes.all)
+   todoStore.changeFilter(todoFilterTypes.all)
+   expect(todoStore.currentFilter).toBe(todoFilterTypes.all)
    
-   todoStore.changeFilter("active")
-   expect(todoStore.currentFilter).toBe("active")
+   todoStore.changeFilter(todoFilterTypes.active)
+   expect(todoStore.currentFilter).toBe(todoFilterTypes.active)
 
-   todoStore.changeFilter("completed")
-   expect(todoStore.currentFilter).toBe("completed")
+   todoStore.changeFilter(todoFilterTypes.completed)
+   expect(todoStore.currentFilter).toBe(todoFilterTypes.completed)
 
   })
   it('items left',()=>{
@@ -62,5 +62,20 @@ describe('TodoStore functionality ',() =>{
    })
    it('filter todo',()=>{
      expect(todoStore.filterTodo.length).toBe(3)
+   todoStore.changeFilter(todoFilterTypes.all)
+   expect(todoStore.filterTodo.length).toBe(3)
+   todoStore.changeFilter(todoFilterTypes.completed)
+   expect(todoStore.filterTodo.length).toBe(0)
+   todoStore.todos[0].isCompleted=true 
+   expect(todoStore.filterTodo.length).toBe(1)
+   todoStore.changeFilter(todoFilterTypes.active)
+   expect(todoStore.filterTodo.length).toBe(2)
+   todoStore.todos[1].isCompleted=true 
+   expect(todoStore.filterTodo.length).toBe(1)
+
+
+
+
+
    })
 })
