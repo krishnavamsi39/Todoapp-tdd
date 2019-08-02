@@ -16,5 +16,11 @@ it('should toggle a todo',()=>{
   it('should update a todo text',()=>{
       expect(todoModel.text).toBe("tdd")
       todoModel.updateTodoText("react")
+      expect(todoModel.text).toBe("react")
+      todoModel.updateTodoText("mobx")
+      expect(todoModel.text).toBe("mobx")
+
+
+
   })
 })

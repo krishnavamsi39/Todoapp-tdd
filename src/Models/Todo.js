@@ -13,7 +13,8 @@ class Todo{
         this.isCompleted=!this.isCompleted
     }
     @action
-    updateTodoText(){
+    updateTodoText(newText){
+        this.text=newText
 
     }
 
