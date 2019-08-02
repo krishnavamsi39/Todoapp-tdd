@@ -24,8 +24,13 @@ this.currentFilter=filter
 }
 @computed get
  itemsLeft(){
-     return this.todos.length
-
+     let itemCount=0
+     this.todos.map(obj=>{
+         if(!obj.isCompleted){
+            itemCount+=1
+         }
+     })
+return itemCount
 }
 }
 export default TodoStore

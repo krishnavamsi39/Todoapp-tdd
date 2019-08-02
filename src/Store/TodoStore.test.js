@@ -52,6 +52,16 @@ describe('TodoStore functionality ',() =>{
   })
   it('items left',()=>{
     expect(todoStore.itemsLeft).toBe(3)
+    todoStore.todos[0].isCompleted=true 
+    expect(todoStore.itemsLeft).toBe(2)
+    todoStore.todos[1].isCompleted=true 
+    expect(todoStore.itemsLeft).toBe(1)
+    todoStore.todos[1].isCompleted=false 
+    expect(todoStore.itemsLeft).toBe(2)
+
+
+
+
    
    })
 })
