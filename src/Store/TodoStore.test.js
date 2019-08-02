@@ -40,6 +40,13 @@ describe('TodoStore functionality ',() =>{
   })
   it('update Filter',()=>{
    todoStore.changeFilter("all")
+   todoStore.changeFilter("active")
+   expect(todoStore.currentFilter).toBe("active")
+
+   todoStore.changeFilter("completed")
+   expect(todoStore.currentFilter).toBe("completed")
+
+
 
   })
 })
