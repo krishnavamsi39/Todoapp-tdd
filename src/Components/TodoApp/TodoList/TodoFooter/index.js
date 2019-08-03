@@ -9,7 +9,7 @@ render(){
    
     return(
         <>
-        <button data-testid="all" onClick={this.handleClickAll}/>
+        <button data-testid={todoFilterTypes.all} onClick={this.handleClickAll}/>
        
 
         </>
