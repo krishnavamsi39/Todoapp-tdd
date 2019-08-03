@@ -21,6 +21,7 @@ render(){
    
     return(
         <div>
+            <span>{this.props.todoStore. itemsLeft} items left</span>
         <button data-testid={todoFilterTypes.all} onClick={this.handleClickAll}>All</button>
        <button data-testid={todoFilterTypes.active} onClick={this.handleClickActive}>Active</button>
        <button data-testid={todoFilterTypes.completed} onClick={this.handleClickCompleted}>Completed</button>
