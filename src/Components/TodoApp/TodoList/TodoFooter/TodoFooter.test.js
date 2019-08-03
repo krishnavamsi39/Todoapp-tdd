@@ -2,7 +2,7 @@ import {render,cleanup, fireEvent} from '@testing-library/react'
 import React from 'react'
 import TodoFooter from './index'
 import TodoStore from '../../../../Store/TodoStore'
-
+import todoFilterTypes from '../../../../Constants/todoFilter'
 afterEach(cleanup)
 describe('test for todofooter component',()=>{
     it('should test if filter value is changing',()=>{
