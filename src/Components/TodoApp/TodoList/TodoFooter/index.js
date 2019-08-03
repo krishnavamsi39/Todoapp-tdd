@@ -8,12 +8,17 @@ class TodoFooter extends Component{
     handleClickCompleted=()=>{
         this.props.todoStore.changeFilter(todoFilterTypes.completed)
     }
+    handleClickActive=()=>{
+        this.props.todoStore.changeFilter(todoFilterTypes.active)
+
+    }
 render(){
    
     return(
         <>
         <button data-testid={todoFilterTypes.all} onClick={this.handleClickAll}/>
        <button data-testid={todoFilterTypes.completed} onClick={this.handleClickCompleted}/>
+       <button data-testid={todoFilterTypes.active} onClick={this.handleClickActive}/>
 
         </>
     )
