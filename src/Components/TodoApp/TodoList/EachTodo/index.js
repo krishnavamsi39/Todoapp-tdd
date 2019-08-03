@@ -1,5 +1,8 @@
 import React,{Component} from 'react'
 import EnterTodo from '../../EnterTodo';
+import {observer} from "mobx-react"
+
+@observer
 class EachTodo extends Component{
     constructor(props){
         super(props)
@@ -15,23 +18,26 @@ class EachTodo extends Component{
         this.props.todoStore.deleteTodo(this.props.todo.id)
     }
     handleUpdate=(message)=>{
+
         this.props.todo.updateTodoText(message)
+        this.setState({isEditable:false})
     }
     handleEditableText=()=>{
+       
         if(!this.state.isEditable){
-            return <span data-testid="double-click" onDoubleClick={this.handleDoubleClick}></span>
+            return <span data-testid="double-click" onDoubleClick={this.handleDoubleClick}>{this.props.todo.text}</span>
         }
         else{
-            return <EnterTodo onKeyPressEnter={this.handleUpdate}/>
+            return <EnterTodo onKeyPressEnter={this.handleUpdate} defaultText={this.props.todo.text}/>
         }
     }
 render(){
     return(
-        <>
-        <input data-testid="checkbox" type="checkbox" onClick={this.handleClick} />
+        <div>
+        <input data-testid="checkbox" type="checkbox" checked={this.props.todo.isCompleted} onClick={this.handleClick} />
         {this.handleEditableText()}
         <button data-testid="delete-todo" onClick={this.handleDelete}/>
-        </>
+        </div>
     )
 }
 }

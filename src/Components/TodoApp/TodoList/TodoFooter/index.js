@@ -1,5 +1,7 @@
 import React,{Component } from 'react'
 import todoFilterTypes from '../../../../Constants/todoFilter'
+import {observer} from 'mobx-react'
+@observer
 class TodoFooter extends Component{
     handleClickAll=()=>{
         this.props.todoStore.changeFilter(todoFilterTypes.all)
@@ -18,13 +20,14 @@ class TodoFooter extends Component{
 render(){
    
     return(
-        <>
-        <button data-testid={todoFilterTypes.all} onClick={this.handleClickAll}/>
-       <button data-testid={todoFilterTypes.completed} onClick={this.handleClickCompleted}/>
-       <button data-testid={todoFilterTypes.active} onClick={this.handleClickActive}/>
-       <button data-testid="clear" onClick={this.handleClear}/>
+        <div>
+        <button data-testid={todoFilterTypes.all} onClick={this.handleClickAll}>All</button>
+       <button data-testid={todoFilterTypes.active} onClick={this.handleClickActive}>Active</button>
+       <button data-testid={todoFilterTypes.completed} onClick={this.handleClickCompleted}>Completed</button>
 
-        </>
+       <button data-testid="clear" onClick={this.handleClear}>ClearCompleted</button>
+
+        </div>
     )
 }
 }
