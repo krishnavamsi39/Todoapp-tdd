@@ -18,7 +18,8 @@ render(){
     return(
         <Div>
         {this.renderTodoItems()}
-        <TodoFooter  todoStore={this.props.todoStore}/>
+        {this.props.todoStore.todos.length>0?(<TodoFooter  todoStore={this.props.todoStore}/>):(<></>)}
+        
         </Div>
     )
 }

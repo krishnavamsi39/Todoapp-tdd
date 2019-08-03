@@ -25,7 +25,11 @@ class EachTodo extends Component{
     handleEditableText=()=>{
        
         if(!this.state.isEditable){
+            if(!this.props.todo.isCompleted)
             return <span data-testid="double-click" onDoubleClick={this.handleDoubleClick}>{this.props.todo.text}</span>
+            else
+            return <strike >{this.props.todo.text}</strike>
+
         }
         else{
             return <EnterTodo onKeyPressEnter={this.handleUpdate} defaultText={this.props.todo.text}/>
@@ -34,9 +38,9 @@ class EachTodo extends Component{
 render(){
     return(
         <div>
-        <input data-testid="checkbox" type="checkbox" checked={this.props.todo.isCompleted} onClick={this.handleClick} />
+        <input data-testid="checkbox" type="checkbox" checked={this.props.todo.isCompleted} onChange={this.handleClick} />
         {this.handleEditableText()}
-        <button data-testid="delete-todo" onClick={this.handleDelete}/>
+        <button data-testid="delete-todo" onClick={this.handleDelete}>x</button>
         </div>
     )
 }
