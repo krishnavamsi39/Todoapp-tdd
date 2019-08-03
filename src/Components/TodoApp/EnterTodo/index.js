@@ -8,7 +8,7 @@ class EnterTodo extends Component{
         this.setState({todoText:e.target.value})
     }
     handleKeyDown=(e)=>{
-        if(e.keyCode===13 ){
+        if(e.keyCode===13 && e.target.value!==""){
         this.props.onKeyPressEnter(this.state.todoText)
         this.setState({todoText:""})
         }
