@@ -20,9 +20,17 @@ describe('Test for EachTodo Component',()=>{
         todoStore.addTodo("react")
         const {getByTestId}=render(<EachTodo todo={todoStore.todos[0]}todoStore={todoStore}/>)
         const deleteTodo=getByTestId("delete-todo")
+        window.confirm=jest.fn(()=>true)
         fireEvent.click(deleteTodo)
         expect(todoStore.deleteTodo).toHaveBeenCalled()
         expect(todoStore.todos.length).toBe(0)
+        todoStore.addTodo("react")
+
+        window.confirm=jest.fn(()=>false)
+        fireEvent.click(deleteTodo)
+        expect(todoStore.deleteTodo).not.toHaveBeenCalled()
+
+
     })
     it('should become editable text on double click and text should change on clicking enter key',()=>{
         const todo=new Todo("Mobx",1,false)

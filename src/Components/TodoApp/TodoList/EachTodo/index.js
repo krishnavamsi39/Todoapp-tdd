@@ -15,6 +15,7 @@ class EachTodo extends Component{
         this.props.todo.toggleTodo()
     }
     handleDelete=()=>{
+     
         this.props.todoStore.deleteTodo(this.props.todo.id)
     }
     handleUpdate=(message)=>{
