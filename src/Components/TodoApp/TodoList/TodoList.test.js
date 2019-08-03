@@ -8,7 +8,9 @@ describe('test for list of todos',()=>{
         const todoStore=new TodoStore()
         todoStore.addTodo("mobx")
         todoStore.addTodo("react")
-        const {getAllByTestId}=render(<TodoList />)
+        const {getAllByTestId}=render(<TodoList todoStore={todoStore}/>)
+        const checkbox=getAllByTestId("double-click")
+        expect(checkbox.length).toBe(todoStore.todos.length)
 
         
     })
