@@ -15,7 +15,7 @@ class EachTodo extends Component{
         this.props.todo.toggleTodo()
     }
     handleDelete=()=>{
-     
+       if( window.confirm("Do you want to delete"))
         this.props.todoStore.deleteTodo(this.props.todo.id)
     }
     handleUpdate=(message)=>{

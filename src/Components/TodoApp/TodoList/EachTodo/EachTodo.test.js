@@ -24,11 +24,13 @@ describe('Test for EachTodo Component',()=>{
         fireEvent.click(deleteTodo)
         expect(todoStore.deleteTodo).toHaveBeenCalled()
         expect(todoStore.todos.length).toBe(0)
-        todoStore.addTodo("react")
 
         window.confirm=jest.fn(()=>false)
+        todoStore.addTodo("mobx")
+
         fireEvent.click(deleteTodo)
-        expect(todoStore.deleteTodo).not.toHaveBeenCalled()
+        expect(todoStore.todos.length).toBe(1)
+       
 
 
     })
