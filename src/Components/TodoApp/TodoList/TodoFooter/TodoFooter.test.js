@@ -21,4 +21,13 @@ describe('test for todofooter component',()=>{
         fireEvent.click(completedbutton)
         expect(todoStore.changeFilter).toHaveBeenCalledWith(todoFilterTypes.completed)
     })
+    it('should test if filter value is changing to active',()=>{
+        const todoStore=new TodoStore()
+        jest.spyOn(todoStore,'changeFilter')
+        const {getByTestId}=render(<TodoFooter todoStore={todoStore}/>)
+        const activebutton=getByTestId(todoFilterTypes.active)
+        fireEvent.click(activebutton)
+        expect(todoStore.changeFilter).toHaveBeenCalledWith(todoFilterTypes.active)
+       
+    })
 })
