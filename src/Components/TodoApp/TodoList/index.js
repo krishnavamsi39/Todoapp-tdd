@@ -8,4 +8,3 @@ render(){
     )
 }
 }
-export default TodoList
