@@ -12,6 +12,9 @@ class TodoFooter extends Component{
         this.props.todoStore.changeFilter(todoFilterTypes.active)
 
     }
+    handleClear=()=>{
+        this.props.todoStore.clearCompleted()
+    }
 render(){
    
     return(
@@ -19,6 +22,7 @@ render(){
         <button data-testid={todoFilterTypes.all} onClick={this.handleClickAll}/>
        <button data-testid={todoFilterTypes.completed} onClick={this.handleClickCompleted}/>
        <button data-testid={todoFilterTypes.active} onClick={this.handleClickActive}/>
+       <button data-testid="clear" onClick={this.handleClear}/>
 
         </>
     )
